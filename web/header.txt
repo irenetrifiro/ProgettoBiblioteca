@@ -1,0 +1,6 @@
+<div class="jumbotron">
+    <div class="container">
+    <h1>E-lib</h1>
+    <p>The electronic library</p>
+</div> 
+</div>

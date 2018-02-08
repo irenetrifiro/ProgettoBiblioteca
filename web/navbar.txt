@@ -1,0 +1,120 @@
+<script>
+	
+	$(document).ready(function(){
+
+		var pathname = window.location.pathname;
+		
+		var getUrlParameter = function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1));
+		    var sURLVariables = sPageURL.split('&');
+		    var sParameterName;
+		    var i;
+		    
+		    for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+			    return sParameterName[1] === undefined ? true : sParameterName[1];
+			}
+		    }
+		};
+
+		//pagina home all'avvio dell'app o dopo il login
+		if(getUrlParameter('action') === undefined || getUrlParameter('action') === 'logout'){
+		    var path = pathname + "?action=home";
+		}
+		else {
+		    var path = pathname + "?action=" + getUrlParameter('action');
+		}
+		
+		//voci di sotto menu
+		if($('.nav > li > a[href="'+path+'"]').length === 0){
+		    //console.log($('.dropdown-menu > li > a[href="'+path+'"]'));
+		    $('.dropdown-menu > li > a[href="'+path+'"]').parent().addClass('active');
+		}
+		//voci della navbar
+		else {
+		    //console.log($('.nav > li > a[href="'+path+'"]'));
+		    $('.nav > li > a[href="'+path+'"]').parent().addClass('active'); 
+		}
+		
+	});
+	
+</script>
+
+
+<!-----------------------------------Inizio NavBar--------------------------->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+	<!-- INIZIO HEADER -->
+        <div class="navbar-header">
+            <!------ Area Bottone mobile display ------>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <!--Fine Area Bottone mobile display-->
+            <!------ Area Brand------>
+            <p class="navbar-brand">
+		E-lib <span class="glyphicon glyphicon-book"></span>
+            </p>
+            <!--Fine Area Brand-->
+	</div>
+	<!-- FINE HEADER -->
+
+	<!-- INIZIO MENU' DI NAVIGAZIONE -->
+        <div class="navbar-collapse collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/ProgettoBiblioteca/Controller?action=home">HOME</a></li>
+                <li><a href="/ProgettoBiblioteca/Controller?action=catalogo">CATALOGO</a></li>
+            
+	    <%
+		//utente loggato
+		if(session.getAttribute("ruolo") != null) {%> 
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-extended="false">PRESTITI <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			    <li><a href="/ProgettoBiblioteca/Controller?action=goRestituisciPrestito">Restituisci prestito</a></li>
+			    <li><a href="/ProgettoBiblioteca/Controller?action=storico">Storico prestiti</a></li>
+			    <% 
+				//Gestione prestiti clienti (solo amministratore)
+				if(session.getAttribute("ruolo")!=null && session.getAttribute("ruolo").equals("Amministratore")){%>
+				    <li><a href="/ProgettoBiblioteca/Controller?action=prestitiClienti">Prestiti Clienti</a></li>
+				<%}
+			    %>
+			</ul>
+		    </li>
+                    <%
+                        //Gestione del catalogo (solo amministratore)
+                        if(session.getAttribute("ruolo").equals("Amministratore")) {%>
+                            <li><a href="/ProgettoBiblioteca/Controller?action=gestioneCatalogo">GESTIONE CATALOGO</a></li>
+                        <%}
+                    %>
+                <%}
+	    %>
+            </ul>
+	<!-- FINE MENU' DI NAVIGAZIONE -->
+
+	<!-- INIZIO MENU' DI NAVIAGAZIONE DESTRO -->
+	<ul class="nav navbar-nav navbar-right">
+            <li><a href="/ProgettoBiblioteca/Controller?action=contatti"><div class="hidden-sm"><span class="glyphicon glyphicon-info-sign"</span> CONTATTI</div><span class="glyphicon glyphicon-info-sign visible-sm"</span></a></li>
+            <%
+		//utente non loggato
+		if(session.getAttribute("ruolo") == null) {%>
+		    <li><a href="login.jsp"><div class="hidden-sm"><span class="glyphicon glyphicon-log-in"></span> Login</div><span class="glyphicon glyphicon-log-in visible-sm"></span></a></li>
+		<%}
+		//utente loggato
+		else { %>
+                    <li class=dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-extended="false"><span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>	
+                        <ul class="dropdown-menu">
+                            <% out.print("<li id=\"account\"><a>" + session.getAttribute("username") + "</a></li>"); %>
+			    <li><a href="/ProgettoBiblioteca/Controller?action=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        </ul>
+                    </li>
+                <%}
+	    %>
+	</ul>
+	<!-- FINE MENU' DI NAVIAGAZIONE DESTRO -->
+    </div>
+</nav>

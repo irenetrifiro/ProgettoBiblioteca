@@ -1,0 +1,416 @@
+/*GENERALI*/
+
+body{
+    background-color: rgba(242,209,62,0.70);
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+
+
+
+.main-container{
+    padding-bottom: 50px;
+    margin: 0 auto;
+    min-height: 400px;
+}
+
+.btn-lg-container {
+    padding-top: 3%;
+}
+
+.btn-lg-container .btn{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-color: #333745;
+    color: #ffffff;
+    border: 1px solid #333745;
+}
+
+.btn-lg-container .btn:hover, .btn-lg-container .btn:focus{
+    color: #f2d13e;
+    border: 2px solid #ffffff;
+}
+
+.form-control{
+    border: 1px solid #333745;
+    border-color: #333745;
+    box-shadow: 0 0px 0px #fff inset, 0 0 0px #333457;
+    outline: 0 none;
+}
+
+.form-control:focus{
+    border-color: #333745;
+    box-shadow: 0 0px 0px #fff inset, 0 0 0px #333457;
+    outline: 0 none;
+}
+
+.input-lg:focus{
+    border-color: #333745;
+    box-shadow: 0 0px 0px #fff inset, 0 0 0px #333457;
+    outline: 0 none;
+}
+
+.titolo{
+    font-family: 'Indie Flower', cursive;
+    color: #333745;
+    font-size: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333745;
+    padding-bottom: 5px;
+}
+
+/*  FINE GENERALI */
+
+/* NAVBAR */
+
+.navbar {
+    border-radius: 0px 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-default {      
+    background-color: #333745;
+    border-color: #333745;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {   
+    color: #fff ;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #f2d13e; 
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #f2d13e;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #f2d13e;
+    background: none;
+}
+
+.dropdown-menu {
+    background-color: #333745;
+    border-radius: 15px 50px 30px 5px;
+    box-shadow: 2px 6px 12px 6px #fff;
+}
+
+.dropdown-menu>li>a {
+    color: #fff;
+}
+
+.dropdown-menu>li>a:hover{
+    color: #f2d13e;
+    background: none; 
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+    color: #f2d13e;
+    background: none; 
+}
+
+.navbar-default .navbar-toggle{
+    border-color: #fff;
+    background-color: #333745;
+    border: 1px solid #fff;
+    text-align: center;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    border-color: #f2d13e;
+    background-color: #333745;
+    border: 1px solid #f2d13e;
+    text-align: center;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+#account>a:hover, #account>a:focus{
+    color: #ffffff;
+}
+
+@media (max-width: 767px){
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #fff;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #f2d13e;
+        background: none; 
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a, .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus, .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover{
+        color: #f2d13e;
+        background: none;
+    }
+}
+
+/* FINE NAVBAR */
+
+/* JUMBOTRON */
+
+.jumbotron{
+    background: url("img/books-jumbo.jpg") no-repeat center top;
+    background-size: cover;
+    font-family: 'Indie Flower', cursive;
+    color: #f2d13e;
+}
+
+.jumbotron h1{
+    font-size: 100px;
+}
+
+.jumbotron p{
+    font-size: 30px;
+    padding-top: 0%;
+}
+
+/* FINE JUMBOTRON */
+
+/* INDEX */
+
+.bodyIndex{
+    padding-bottom: 5rem;
+}
+
+.main-index{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.full-screen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* FINE INDEX */
+
+/* MESSAGGI */
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+p.noBorrow{
+    text-align:center;
+    font-weight: bold;
+    font-size: 150%;
+    margin-top: 50px;
+}
+
+/* FINE MESSAGGI */
+
+/*LOGIN*/
+
+.login-container {
+    align-content: center;
+    padding-left: 35%; 
+    padding-right: 35%;
+}
+
+h2.login-title {
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: #333745;
+    font-size: 50px;
+}
+
+.input-group{
+    padding: 2px;
+}
+
+.input-group-addon{
+    background-color: #333745;
+    border: 1px solid #333745;
+}
+
+.input-group-addon i{
+    color: #ffffff;
+}
+
+
+/* FINE LOGIN */
+
+/* INSERISCI LIBRO */
+
+.add-container {
+    align-content: center;
+    padding-left: 30%; 
+    padding-right: 30%;
+}
+
+.add-container>h2{
+    font-family: 'Indie Flower', cursive;
+    color: #333745;
+    font-size: 50px;
+}
+
+.col-md-2 a{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-color: #333745;
+    color: #ffffff;
+    border: 1px solid #333745;
+}
+
+.col-md-2 a:hover, .col-md-2 a:focus{
+    background-color: #333457;
+    color: #f2d13e;
+    border: 2px solid #ffffff;
+
+}
+
+.control-label{
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;    
+}
+
+/* FINE INSERISCI LIBRO */
+
+/* TABELLE */
+
+.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th,.table>thead>tr>td,.table>thead>tr>th{
+    border-top:1px solid #333745;
+}
+
+.table>thead>tr>th{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    border-bottom:2px solid #333745;
+    padding: 1px;
+}
+
+th.center, td.center {
+    text-align: center;
+}
+
+td.daRestituire{
+    text-align: center;
+    color: red;
+}
+
+.glyphicon-remove {
+    color: red;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+.disable {
+    color: #acc6b0;
+}
+
+/* FINE TABELLE */
+
+/* SEARCH BAR */
+div.searchBar {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+#searchedBook {
+    font-size: 16px;
+    border: 1px solid #333745;
+}
+
+/* FINE SEARCHBAR */
+
+
+/*CONTATTI*/
+
+/*mappa*/
+
+#google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;        
+    overflow: hidden;
+    border: 1px solid #333745;
+}
+
+#google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+
+}
+
+
+.contatti-titoli{ 
+    font-family: 'Indie Flower', cursive;
+    color: #333745;
+    font-size: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333745;
+    padding-bottom: 5px;
+}
+
+address{
+    font-size: 20px;
+}
+
+.panel{
+    border-color: #333745;
+}
+
+.panel .panel-heading{
+    background-color: #333745;
+}
+
+.panel-title>a:focus, .panel-title>a:hover{
+    color: #f2d13e;
+    text-decoration: none;
+}
+
+.panel-title  a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: #333745;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+.footer p{
+    color: #fff;
+}
+
+/* FINE FOOTER */
+
+/* ERROR PAGE */
+
+.jumbotron-error{
+    background: none;
+    font-family: 'Indie Flower', cursive;
+    color: #333745;
+}
